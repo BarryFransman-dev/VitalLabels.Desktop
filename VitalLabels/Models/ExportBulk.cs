@@ -11,6 +11,6 @@ namespace VitalLabels.Desktop.Models
         public string Description { get; set; }
         public string BatchNumber { get; set; }
         public string Expiry { get; set; }
-        public decimal Weight { get; set; }
+        public decimal? Weight { get; set; }
     }
 }

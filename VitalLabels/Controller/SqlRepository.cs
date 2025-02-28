@@ -96,7 +96,7 @@ namespace VitalLabels.Desktop.Repository
                                                                         "left outer join vhfcptfin01a.EncoreCompanyA.dbo.[InvMaster+] ip on p.strBulkCode = ip.StockCode collate Latin1_General_BIN " +
                                                                         "join vhfcptfin01a.EncoreCompanyA.dbo.WipMaster w on w.Job = strJob  collate Latin1_General_BIN " +
                                                                         "join (select distinct Lot, LEFT(Convert(date, Min(ExpiryDate)), LEN(Convert(date, Min(ExpiryDate))) - 3) ExpiryDate  " +
-                                                                        "From vhfcptfin01a.EncoreCompanyA.dbo.LotDetail group by Lot) lot on lot.Lot = w.Job " +
+                                                                        "From vhfcptfin01a.EncoreCompanyA.dbo.LotDetail where QtyOnHand > 0 group by Lot) lot on lot.Lot = w.Job " +
                                                                         "where strBatchNo = '" + passBatch.Substring(0,13) + "'");
             return retSql.ToList();
         }
@@ -111,7 +111,7 @@ namespace VitalLabels.Desktop.Repository
                                                                             "left outer join vhfcptfin01a.EncoreCompanyA.dbo.[InvMaster+] ip on p.strBulkCode = ip.StockCode collate Latin1_General_BIN " +
                                                                             "join vhfcptfin01a.EncoreCompanyA.dbo.WipMaster w on w.JobDescription = substring(strBatchNo, 1, 13) collate Latin1_General_BIN " +
                                                                             "join (select distinct Lot, LEFT(Convert(date, Min(ExpiryDate)), LEN(Convert(date, Min(ExpiryDate))) - 3) ExpiryDate " +
-                                                                            "From vhfcptfin01a.EncoreCompanyA.dbo.LotDetail group by Lot) lot on lot.Lot = w.Job " +
+                                                                            "From vhfcptfin01a.EncoreCompanyA.dbo.LotDetail where QtyOnHand > 0 group by Lot) lot on lot.Lot = w.Job " +
                                                                             "where strBatchNo = '" + passBatch + "'");
             return retSql.ToList();
         }
