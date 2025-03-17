@@ -2,6 +2,7 @@
 using DevExpress.XtraPrinting.Preview;
 using DevExpress.XtraReports.Parameters;
 using System.Collections.Generic;
+using System.Deployment.Application;
 using System.Windows.Forms;
 using VitalLabels.Desktop.Properties;
 using VitalLabels.Desktop.Reports;
@@ -13,18 +14,26 @@ namespace VitalLabels
     public partial class frmMain : Form
     {
         private SqlRepository sqlRepository;
-
+        private string ver;
         public frmMain()
         {
             InitializeComponent();
             sqlRepository = new SqlRepository();
+            ver = Application.ProductVersion.ToString();
+            Text = "Nautilus Labels Ver:" + ver + " - ACB Outer Carton Label";
+            if (ApplicationDeployment.IsNetworkDeployed)
+            {
+                var ad = ApplicationDeployment.CurrentDeployment;
+                ver = ad.CurrentVersion.ToString();
+                Text = "Nautilus Labels Ver:" + ver + " - ACB Outer Carton Label";
+            }
         }
 
         #region ACB
         private void bbiACBOuter_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             documentViewer1.DocumentSource = new ACBOuterCartonReport();
-            Text = "Nautilus Labels - ACB Outer Carton Label";
+            Text = "Nautilus Labels Ver:" + ver + " - ACB Outer Carton Label";
             var dp = documentViewer1.GetDockPanel(PreviewDockPanelKind.Parameters);
             dp.Width = 300;
             documentViewer1.InitiateDocumentCreation();
@@ -35,7 +44,7 @@ namespace VitalLabels
             var report = new ACBShrinkLabelReport();
             report.Parameters[0].Description = "Job No.";
             documentViewer1.DocumentSource = report;
-            Text = "Nautilus Labels - ACB Shrink Label";
+            Text = "Nautilus Labels Ver:" + ver + " - ACB Shrink Label";
             var dp = documentViewer1.GetDockPanel(PreviewDockPanelKind.Parameters);
             dp.Width = 300;
             documentViewer1.InitiateDocumentCreation();
@@ -46,7 +55,7 @@ namespace VitalLabels
             var report = new ACBShrinkLabelReport();
             report.Parameters[0].Description = "Stock Code";
             documentViewer1.DocumentSource = report;
-            Text = "Nautilus Labels - ACB Shrink Label";
+            Text = "Nautilus Labels Ver:" + ver + " - ACB Shrink Label";
             var dp = documentViewer1.GetDockPanel(PreviewDockPanelKind.Parameters);
             dp.Width = 300;
             documentViewer1.InitiateDocumentCreation();
@@ -57,7 +66,7 @@ namespace VitalLabels
         private void bbiBiotech_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             documentViewer1.DocumentSource = new BiotechReport();
-            Text = "Nautilus Labels - Biotech Shrink Label";
+            Text = "Nautilus Labels Ver:" + ver + " - Biotech Shrink Label";
             var dp = documentViewer1.GetDockPanel(PreviewDockPanelKind.Parameters);
             dp.Width = 300;
             documentViewer1.InitiateDocumentCreation();
@@ -66,7 +75,7 @@ namespace VitalLabels
         private void bbiBiotechOuter_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             documentViewer1.DocumentSource = new BiotechOuterReport();
-            Text = "Nautilus Labels - Biotech Outer Label";
+            Text = "Nautilus Labels Ver:" + ver + " - Biotech Outer Label";
             var dp = documentViewer1.GetDockPanel(PreviewDockPanelKind.Parameters);
             dp.Width = 300;
             documentViewer1.InitiateDocumentCreation();
@@ -80,7 +89,7 @@ namespace VitalLabels
             var report = new ShrinkLabelReport();
             report.Parameters[0].Description = "Job No.";
             documentViewer1.DocumentSource = report;
-            Text = "Nautilus Labels - Generic Shrink Label";
+            Text = "Nautilus Labels Ver:" + ver + " - Generic Shrink Label";
             var dp = documentViewer1.GetDockPanel(PreviewDockPanelKind.Parameters);
             dp.Width = 300;
             documentViewer1.InitiateDocumentCreation();
@@ -91,7 +100,7 @@ namespace VitalLabels
             var report = new ShrinkLabelReport();
             report.Parameters[0].Description = "Stock Code";
             documentViewer1.DocumentSource = report;
-            Text = "Nautilus Labels - Generic Shrink Label";
+            Text = "Nautilus Labels Ver:" + ver + " - Generic Shrink Label";
             var dp = documentViewer1.GetDockPanel(PreviewDockPanelKind.Parameters);
             dp.Width = 300;
             documentViewer1.InitiateDocumentCreation();
@@ -100,7 +109,7 @@ namespace VitalLabels
         private void bbiGenOuter_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             documentViewer1.DocumentSource = new OuterCartonReport();
-            Text = "Nautilus Labels - Generic Outer Label";
+            Text = "Nautilus Labels Ver:" + ver + " - Generic Outer Label";
             var dp = documentViewer1.GetDockPanel(PreviewDockPanelKind.Parameters);
             dp.Width = 300;
             documentViewer1.InitiateDocumentCreation();
@@ -122,7 +131,7 @@ namespace VitalLabels
             }
 
             documentViewer1.DocumentSource = new MESUserReport();
-            Text = "Nautilus Labels - MES User Label";
+            Text = "Nautilus Labels Ver:" + ver + " - MES User Label";
             var dp = documentViewer1.GetDockPanel(PreviewDockPanelKind.Parameters);
             dp.Width = 300;
             documentViewer1.InitiateDocumentCreation();
@@ -141,7 +150,7 @@ namespace VitalLabels
             report.Parameters.Add(qtyParameter);
             report.Parameters[0].Description = "Batch No.:";
             documentViewer1.DocumentSource = report;
-            Text = "Nautilus Labels - Packing Outer Label";
+            Text = "Nautilus Labels Ver:" + ver + " - Packing Outer Label";
             var dp = documentViewer1.GetDockPanel(PreviewDockPanelKind.Parameters);
             dp.Width = 300;
             documentViewer1.InitiateDocumentCreation();
@@ -160,7 +169,7 @@ namespace VitalLabels
             report.Parameters.Add(weightParameter);
             report.Parameters[0].Description = "Batch No.:";
             documentViewer1.DocumentSource = report;
-            Text = "Nautilus Labels - Export Bulk Label";
+            Text = "Nautilus Labels Ver:" + ver + " - Export Bulk Label";
             var dp = documentViewer1.GetDockPanel(PreviewDockPanelKind.Parameters);
             dp.Width = 300;
             documentViewer1.InitiateDocumentCreation();
@@ -189,7 +198,7 @@ namespace VitalLabels
             var report = new RoomReport();
             report.Parameters.Add(roomParameter);
             documentViewer1.DocumentSource = report;
-            Text = "Nautilus Labels - Room Label";
+            Text = "Nautilus Labels Ver:" + ver + " - Room Label";
             var dp = documentViewer1.GetDockPanel(PreviewDockPanelKind.Parameters);
             dp.Width = 300;
             documentViewer1.InitiateDocumentCreation();
@@ -230,7 +239,7 @@ namespace VitalLabels
             var report = new EquipmentReport();
             report.Parameters.Add(equipmentParameter);
             documentViewer1.DocumentSource = report;
-            Text = "Nautilus Labels - Equipment Label";
+            Text = "Nautilus Labels Ver:" + ver + " - Equipment Label";
             var dp = documentViewer1.GetDockPanel(PreviewDockPanelKind.Parameters);
             dp.Width = 300;
             documentViewer1.InitiateDocumentCreation();
@@ -240,7 +249,7 @@ namespace VitalLabels
         {
             //var ds = new SysproContext().LotDetail;
             documentViewer1.DocumentSource = new WaterLabelReport().DataSource;
-            Text = "Nautilus Labels - Water Label";
+            Text = "Nautilus Labels Ver:" + ver + " - Water Label";
             var dp = documentViewer1.GetDockPanel(PreviewDockPanelKind.Parameters);
             dp.Width = 300;
             documentViewer1.InitiateDocumentCreation();
@@ -252,20 +261,22 @@ namespace VitalLabels
         private void bbiOuterLabel_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             documentViewer1.DocumentSource = new NautOuterCartonReport(); 
-             Text = "Nautilus Labels - Vital Outer Carton Label";
+             Text = "Nautilus Labels Ver:" + ver + " - Vital Outer Carton Label";
             var dp = documentViewer1.GetDockPanel(PreviewDockPanelKind.Parameters);
             dp.Width = 300;
             documentViewer1.InitiateDocumentCreation();
         }
         #endregion
 
+        #region Vital
         private void biInovaOuter_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             documentViewer1.DocumentSource = new InovaOuterCartonReport();
-            Text = "Inova Labels - Inova Outer Carton Label";
+            Text = "Inova Labels Ver:" + ver + " - Inova Outer Carton Label";
             var dp = documentViewer1.GetDockPanel(PreviewDockPanelKind.Parameters);
             dp.Width = 300;
             documentViewer1.InitiateDocumentCreation();
         }
+        #endregion
     }
 }
