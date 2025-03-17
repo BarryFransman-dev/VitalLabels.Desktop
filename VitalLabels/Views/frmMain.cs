@@ -259,5 +259,13 @@ namespace VitalLabels
         }
         #endregion
 
+        private void biInovaOuter_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            documentViewer1.DocumentSource = new InovaOuterCartonReport();
+            Text = "Inova Labels - Inova Outer Carton Label";
+            var dp = documentViewer1.GetDockPanel(PreviewDockPanelKind.Parameters);
+            dp.Width = 300;
+            documentViewer1.InitiateDocumentCreation();
+        }
     }
 }

@@ -143,6 +143,8 @@ namespace VitalLabels
             this.barSubItem4 = new DevExpress.XtraBars.BarSubItem();
             this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
             this.barSubItem7 = new DevExpress.XtraBars.BarSubItem();
+            this.barSubItem6 = new DevExpress.XtraBars.BarSubItem();
+            this.biInovaOuter = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemProgressBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemZoomTrackBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
@@ -316,9 +318,11 @@ namespace VitalLabels
             this.bbiPaking,
             this.bbiBulkLabel,
             this.bbiRoom,
-            this.bbiEquipment});
+            this.bbiEquipment,
+            this.barSubItem6,
+            this.biInovaOuter});
             this.documentViewerBarManager1.MainMenu = this.previewBar3;
-            this.documentViewerBarManager1.MaxItemId = 106;
+            this.documentViewerBarManager1.MaxItemId = 108;
             this.documentViewerBarManager1.PreviewBar = this.previewBar1;
             this.documentViewerBarManager1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemProgressBar2,
@@ -816,6 +820,7 @@ namespace VitalLabels
             this.barSubItem2.ItemAppearance.Normal.Options.UseFont = true;
             this.barSubItem2.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.bsiACB, "", true, true, true, 0, null, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barSubItem6),
             new DevExpress.XtraBars.LinkPersistInfo(this.barSubItem3),
             new DevExpress.XtraBars.LinkPersistInfo(this.barSubItem8),
             new DevExpress.XtraBars.LinkPersistInfo(this.barSubItem5),
@@ -1317,6 +1322,22 @@ namespace VitalLabels
             this.barSubItem7.Id = 94;
             this.barSubItem7.Name = "barSubItem7";
             // 
+            // barSubItem6
+            // 
+            this.barSubItem6.Caption = "INOVA";
+            this.barSubItem6.Id = 106;
+            this.barSubItem6.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.biInovaOuter)});
+            this.barSubItem6.Name = "barSubItem6";
+            // 
+            // biInovaOuter
+            // 
+            this.biInovaOuter.Caption = "Outer Carton Label";
+            this.biInovaOuter.Id = 107;
+            this.biInovaOuter.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem3.ImageOptions.Image")));
+            this.biInovaOuter.Name = "biInovaOuter";
+            this.biInovaOuter.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.biInovaOuter_ItemClick);
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1461,5 +1482,7 @@ namespace VitalLabels
         private DevExpress.XtraBars.BarButtonItem bbiBulkLabel;
         private DevExpress.XtraBars.BarButtonItem bbiRoom;
         private DevExpress.XtraBars.BarButtonItem bbiEquipment;
+        private DevExpress.XtraBars.BarSubItem barSubItem6;
+        private DevExpress.XtraBars.BarButtonItem biInovaOuter;
     }
 }
