@@ -194,7 +194,7 @@ namespace VitalLabels.Desktop.Reports
             this.xrLabel10.StylePriority.UseFont = false;
             this.xrLabel10.StylePriority.UsePadding = false;
             this.xrLabel10.StylePriority.UseTextAlignment = false;
-            this.xrLabel10.Text = "Packing Code: [OuterCartonLabel]";
+            this.xrLabel10.Text = "Item Code: [OuterCartonLabel]";
             this.xrLabel10.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
             // 
             // BiotechOuterReport

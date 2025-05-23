@@ -13,5 +13,6 @@ namespace VitalLabels.Desktop.Reports
         public string PackingCode { get; set; }
         public int? ShrinkSize { get; set; }
         public string BarcodeShrinks { get; set; }
+        public string JobDescription { get; set; }
     }
 }

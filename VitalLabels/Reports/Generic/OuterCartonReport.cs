@@ -17,7 +17,7 @@ namespace VitalLabels.Desktop.Reports
 
         private void OuterCartonReport_ParametersRequestSubmit(object sender, DevExpress.XtraReports.Parameters.ParametersRequestEventArgs e)
         {
-            this.DataSource = new SqlRepository().GetACBSC(e.ParametersInformation[0].Parameter.Value.ToString()).ToList();
+            this.DataSource = new SqlRepository().GetGenSC(e.ParametersInformation[0].Parameter.Value.ToString()).ToList();
         }
     }
 }

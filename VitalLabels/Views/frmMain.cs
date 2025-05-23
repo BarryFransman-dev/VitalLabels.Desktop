@@ -3,6 +3,7 @@ using DevExpress.XtraPrinting.Preview;
 using DevExpress.XtraReports.Parameters;
 using System.Collections.Generic;
 using System.Deployment.Application;
+using System.Security.Cryptography;
 using System.Windows.Forms;
 using VitalLabels.Desktop.Properties;
 using VitalLabels.Desktop.Reports;
@@ -11,13 +12,14 @@ using VitalLabels.Desktop.Views;
 
 namespace VitalLabels
 {
-    public partial class frmMain : Form
+    public partial class frmMain : DevExpress.XtraBars.ToolbarForm.ToolbarForm
     {
         private SqlRepository sqlRepository;
         private string ver;
         public frmMain()
         {
             InitializeComponent();
+            this.WindowState = FormWindowState.Maximized;
             sqlRepository = new SqlRepository();
             ver = Application.ProductVersion.ToString();
             Text = "Nautilus Labels Ver:" + ver + " - ACB Outer Carton Label";
@@ -63,9 +65,30 @@ namespace VitalLabels
         #endregion
 
         #region Biotech
-        private void bbiBiotech_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+
+
+        private void bbiBiotechShrinkJob_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            documentViewer1.DocumentSource = new BiotechReport();
+            //documentViewer1.DocumentSource = new BiotechShrinkReport();
+            //Text = "Nautilus Labels Ver:" + ver + " - Biotech Shrink Label";
+            //var dp = documentViewer1.GetDockPanel(PreviewDockPanelKind.Parameters);
+            //dp.Width = 300;
+            //documentViewer1.InitiateDocumentCreation();
+
+            var report = new BiotechShrinkReport();
+            report.Parameters[0].Description = "Job No.";
+            documentViewer1.DocumentSource = report;
+            Text = "Nautilus Labels Ver:" + ver + " - Biotech Shrink Label";
+            var dp = documentViewer1.GetDockPanel(PreviewDockPanelKind.Parameters);
+            dp.Width = 300;
+            documentViewer1.InitiateDocumentCreation();
+        }
+
+        private void bbiBiotechShrinkSKU_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            var report = new BiotechShrinkReport();
+            report.Parameters[0].Description = "Stock Code";
+            documentViewer1.DocumentSource = report;
             Text = "Nautilus Labels Ver:" + ver + " - Biotech Shrink Label";
             var dp = documentViewer1.GetDockPanel(PreviewDockPanelKind.Parameters);
             dp.Width = 300;
@@ -278,5 +301,10 @@ namespace VitalLabels
             documentViewer1.InitiateDocumentCreation();
         }
         #endregion
+
+        private void frmMain_Load(object sender, System.EventArgs e)
+        {
+            this.WindowState = FormWindowState.Maximized;
+        }
     }
 }

@@ -1,7 +1,7 @@
 ﻿
 namespace VitalLabels.Desktop.Reports
 {
-    partial class BiotechReport
+    partial class BiotechShrinkReport
     {
         /// <summary>
         /// Required designer variable.
@@ -33,6 +33,7 @@ namespace VitalLabels.Desktop.Reports
             this.TopMargin = new DevExpress.XtraReports.UI.TopMarginBand();
             this.BottomMargin = new DevExpress.XtraReports.UI.BottomMarginBand();
             this.Detail = new DevExpress.XtraReports.UI.DetailBand();
+            this.xrLabel8 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel10 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel7 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel5 = new DevExpress.XtraReports.UI.XRLabel();
@@ -56,6 +57,7 @@ namespace VitalLabels.Desktop.Reports
             // Detail
             // 
             this.Detail.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
+            this.xrLabel8,
             this.xrLabel10,
             this.xrLabel7,
             this.xrLabel5,
@@ -66,21 +68,40 @@ namespace VitalLabels.Desktop.Reports
             this.Detail.HeightF = 202F;
             this.Detail.Name = "Detail";
             // 
+            // xrLabel8
+            // 
+            this.xrLabel8.Angle = 90F;
+            this.xrLabel8.Borders = ((DevExpress.XtraPrinting.BorderSide)((((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Top) 
+            | DevExpress.XtraPrinting.BorderSide.Right) 
+            | DevExpress.XtraPrinting.BorderSide.Bottom)));
+            this.xrLabel8.CanGrow = false;
+            this.xrLabel8.Font = new System.Drawing.Font("Arial Narrow", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xrLabel8.LocationFloat = new DevExpress.Utils.PointFloat(335.5001F, 10F);
+            this.xrLabel8.Multiline = true;
+            this.xrLabel8.Name = "xrLabel8";
+            this.xrLabel8.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrLabel8.SizeF = new System.Drawing.SizeF(27F, 183.0001F);
+            this.xrLabel8.StylePriority.UseBorders = false;
+            this.xrLabel8.StylePriority.UseFont = false;
+            this.xrLabel8.StylePriority.UseTextAlignment = false;
+            this.xrLabel8.Text = "[JobDescription]";
+            this.xrLabel8.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
+            // 
             // xrLabel10
             // 
             this.xrLabel10.Borders = ((DevExpress.XtraPrinting.BorderSide)(((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
             this.xrLabel10.CanGrow = false;
             this.xrLabel10.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.xrLabel10.LocationFloat = new DevExpress.Utils.PointFloat(215.5001F, 33F);
+            this.xrLabel10.LocationFloat = new DevExpress.Utils.PointFloat(192.6668F, 33F);
             this.xrLabel10.Multiline = true;
             this.xrLabel10.Name = "xrLabel10";
             this.xrLabel10.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel10.SizeF = new System.Drawing.SizeF(144.4999F, 22.99999F);
+            this.xrLabel10.SizeF = new System.Drawing.SizeF(142.8333F, 22.99999F);
             this.xrLabel10.StylePriority.UseBorders = false;
             this.xrLabel10.StylePriority.UseFont = false;
             this.xrLabel10.StylePriority.UseTextAlignment = false;
-            this.xrLabel10.Text = "Pack Code: [PackingCode]";
+            this.xrLabel10.Text = "Item Code: [PackingCode]";
             this.xrLabel10.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
             // 
             // xrLabel7
@@ -91,7 +112,7 @@ namespace VitalLabels.Desktop.Reports
             this.xrLabel7.Multiline = true;
             this.xrLabel7.Name = "xrLabel7";
             this.xrLabel7.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel7.SizeF = new System.Drawing.SizeF(355F, 33.83337F);
+            this.xrLabel7.SizeF = new System.Drawing.SizeF(330.5001F, 33.83337F);
             this.xrLabel7.StylePriority.UseFont = false;
             this.xrLabel7.StylePriority.UseTextAlignment = false;
             this.xrLabel7.Text = "KEEP OUT OF REACH OF CHILDREN/HOU BUITE BEREIK VAN KINDERS. \r\nBIOTECH LABORATORIE" +
@@ -106,7 +127,7 @@ namespace VitalLabels.Desktop.Reports
             this.xrLabel5.Multiline = true;
             this.xrLabel5.Name = "xrLabel5";
             this.xrLabel5.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel5.SizeF = new System.Drawing.SizeF(355F, 43.83335F);
+            this.xrLabel5.SizeF = new System.Drawing.SizeF(330.5001F, 43.83335F);
             this.xrLabel5.StylePriority.UseFont = false;
             this.xrLabel5.StylePriority.UseTextAlignment = false;
             this.xrLabel5.Text = "Store @ or below 25°C in a well-closed container. Protect from light and moisture" +
@@ -120,7 +141,7 @@ namespace VitalLabels.Desktop.Reports
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
             this.xrLabel3.CanGrow = false;
             this.xrLabel3.Font = new System.Drawing.Font("Arial Narrow", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.xrLabel3.LocationFloat = new DevExpress.Utils.PointFloat(262.1667F, 10F);
+            this.xrLabel3.LocationFloat = new DevExpress.Utils.PointFloat(237.6669F, 10F);
             this.xrLabel3.Multiline = true;
             this.xrLabel3.Name = "xrLabel3";
             this.xrLabel3.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -142,7 +163,7 @@ namespace VitalLabels.Desktop.Reports
             this.xrLabel2.Multiline = true;
             this.xrLabel2.Name = "xrLabel2";
             this.xrLabel2.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel2.SizeF = new System.Drawing.SizeF(257.1667F, 23F);
+            this.xrLabel2.SizeF = new System.Drawing.SizeF(232.6668F, 23F);
             this.xrLabel2.StylePriority.UseBorders = false;
             this.xrLabel2.StylePriority.UseFont = false;
             this.xrLabel2.StylePriority.UseTextAlignment = false;
@@ -159,7 +180,7 @@ namespace VitalLabels.Desktop.Reports
             this.xrLabel1.Multiline = true;
             this.xrLabel1.Name = "xrLabel1";
             this.xrLabel1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel1.SizeF = new System.Drawing.SizeF(210.5001F, 23F);
+            this.xrLabel1.SizeF = new System.Drawing.SizeF(187.6669F, 23F);
             this.xrLabel1.StylePriority.UseBorders = false;
             this.xrLabel1.StylePriority.UseFont = false;
             this.xrLabel1.StylePriority.UseTextAlignment = false;
@@ -172,7 +193,7 @@ namespace VitalLabels.Desktop.Reports
             this.xrBarCode1.LocationFloat = new DevExpress.Utils.PointFloat(5F, 99.83335F);
             this.xrBarCode1.Name = "xrBarCode1";
             this.xrBarCode1.Padding = new DevExpress.XtraPrinting.PaddingInfo(10, 10, 0, 0, 100F);
-            this.xrBarCode1.SizeF = new System.Drawing.SizeF(355F, 59.33334F);
+            this.xrBarCode1.SizeF = new System.Drawing.SizeF(330.5001F, 59.33334F);
             this.xrBarCode1.StylePriority.UseTextAlignment = false;
             this.xrBarCode1.Symbology = code128Generator1;
             this.xrBarCode1.Text = "[BarcodeShrinks]";
@@ -183,7 +204,7 @@ namespace VitalLabels.Desktop.Reports
             this.paramStockCode.Description = "Stock Code";
             this.paramStockCode.Name = "paramStockCode";
             // 
-            // BiotechReport
+            // BiotechShrinkReport
             // 
             this.Bands.AddRange(new DevExpress.XtraReports.UI.Band[] {
             this.TopMargin,
@@ -197,7 +218,7 @@ namespace VitalLabels.Desktop.Reports
             this.paramStockCode});
             this.RollPaper = true;
             this.ShowPrintMarginsWarning = false;
-            this.Version = "21.1";
+            this.Version = "22.1";
             this.ParametersRequestSubmit += new System.EventHandler<DevExpress.XtraReports.Parameters.ParametersRequestEventArgs>(this.BiotechReport_ParametersRequestSubmit);
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
 
@@ -220,5 +241,6 @@ namespace VitalLabels.Desktop.Reports
         private DevExpress.XtraReports.UI.XRLabel xrLabel1;
         private DevExpress.XtraReports.UI.XRLabel xrLabel7;
         private DevExpress.XtraReports.UI.XRLabel xrLabel10;
+        private DevExpress.XtraReports.UI.XRLabel xrLabel8;
     }
 }

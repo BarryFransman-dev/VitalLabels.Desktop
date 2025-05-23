@@ -178,7 +178,7 @@ namespace VitalLabels.Desktop.Reports
             this.paramJob});
             this.RollPaper = true;
             this.ShowPrintMarginsWarning = false;
-            this.Version = "21.1";
+            this.Version = "22.1";
             this.ParametersRequestSubmit += new System.EventHandler<DevExpress.XtraReports.Parameters.ParametersRequestEventArgs>(this.ShrinkLabelReport_ParametersRequestSubmit);
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
 

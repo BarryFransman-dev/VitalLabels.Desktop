@@ -89,6 +89,8 @@ namespace VitalLabels
             this.bbiACBOuter = new DevExpress.XtraBars.BarButtonItem();
             this.bbiACBShrinkJob = new DevExpress.XtraBars.BarButtonItem();
             this.bbiACBShrinkSKU = new DevExpress.XtraBars.BarButtonItem();
+            this.barSubItem6 = new DevExpress.XtraBars.BarSubItem();
+            this.biInovaOuter = new DevExpress.XtraBars.BarButtonItem();
             this.barSubItem3 = new DevExpress.XtraBars.BarSubItem();
             this.bbiOuterCartin = new DevExpress.XtraBars.BarButtonItem();
             this.barSubItem8 = new DevExpress.XtraBars.BarSubItem();
@@ -96,8 +98,9 @@ namespace VitalLabels
             this.bbiGenShrinkJob = new DevExpress.XtraBars.BarButtonItem();
             this.bbiGenShrinkSKU = new DevExpress.XtraBars.BarButtonItem();
             this.barSubItem5 = new DevExpress.XtraBars.BarSubItem();
-            this.bbiBiotech = new DevExpress.XtraBars.BarButtonItem();
             this.bbiBiotechOuter = new DevExpress.XtraBars.BarButtonItem();
+            this.bbiBiotechJob = new DevExpress.XtraBars.BarButtonItem();
+            this.bbiBiotechSKU = new DevExpress.XtraBars.BarButtonItem();
             this.bbiBulk = new DevExpress.XtraBars.BarSubItem();
             this.bbiUserBarcode = new DevExpress.XtraBars.BarButtonItem();
             this.bbiPaking = new DevExpress.XtraBars.BarButtonItem();
@@ -143,8 +146,12 @@ namespace VitalLabels
             this.barSubItem4 = new DevExpress.XtraBars.BarSubItem();
             this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
             this.barSubItem7 = new DevExpress.XtraBars.BarSubItem();
-            this.barSubItem6 = new DevExpress.XtraBars.BarSubItem();
-            this.biInovaOuter = new DevExpress.XtraBars.BarButtonItem();
+            this.toolbarFormControl1 = new DevExpress.XtraBars.ToolbarForm.ToolbarFormControl();
+            this.toolbarFormManager1 = new DevExpress.XtraBars.ToolbarForm.ToolbarFormManager(this.components);
+            this.barDockControl1 = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControl2 = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControl3 = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControl4 = new DevExpress.XtraBars.BarDockControl();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemProgressBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemZoomTrackBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
@@ -155,6 +162,8 @@ namespace VitalLabels
             ((System.ComponentModel.ISupportInitialize)(this.printPreviewRepositoryItemComboBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemProgressBar2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemZoomTrackBar2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.toolbarFormControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.toolbarFormManager1)).BeginInit();
             this.SuspendLayout();
             // 
             // repositoryItemProgressBar1
@@ -173,11 +182,11 @@ namespace VitalLabels
             // 
             this.layoutControl1.Controls.Add(this.documentViewer1);
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.layoutControl1.Location = new System.Drawing.Point(0, 56);
+            this.layoutControl1.Location = new System.Drawing.Point(0, 100);
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(-812, 588, 812, 500);
             this.layoutControl1.Root = this.Root;
-            this.layoutControl1.Size = new System.Drawing.Size(1260, 832);
+            this.layoutControl1.Size = new System.Drawing.Size(1394, 660);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
@@ -186,8 +195,9 @@ namespace VitalLabels
             this.documentViewer1.DocumentSource = typeof(VitalLabels.Desktop.Reports.ACBOuterCartonReport);
             this.documentViewer1.IsMetric = true;
             this.documentViewer1.Location = new System.Drawing.Point(12, 12);
+            this.documentViewer1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.documentViewer1.Name = "documentViewer1";
-            this.documentViewer1.Size = new System.Drawing.Size(1236, 808);
+            this.documentViewer1.Size = new System.Drawing.Size(1370, 636);
             this.documentViewer1.TabIndex = 4;
             // 
             // Root
@@ -197,7 +207,7 @@ namespace VitalLabels
             this.Root.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.layoutControlItem1});
             this.Root.Name = "Root";
-            this.Root.Size = new System.Drawing.Size(1260, 832);
+            this.Root.Size = new System.Drawing.Size(1394, 660);
             this.Root.TextVisible = false;
             // 
             // layoutControlItem1
@@ -205,7 +215,7 @@ namespace VitalLabels
             this.layoutControlItem1.Control = this.documentViewer1;
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(1240, 812);
+            this.layoutControlItem1.Size = new System.Drawing.Size(1374, 640);
             this.layoutControlItem1.TextLocation = DevExpress.Utils.Locations.Top;
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
@@ -220,6 +230,7 @@ namespace VitalLabels
             this.documentViewerBarManager1.DockControls.Add(this.barDockControlBottom);
             this.documentViewerBarManager1.DockControls.Add(this.barDockControlLeft);
             this.documentViewerBarManager1.DockControls.Add(this.barDockControlRight);
+            this.documentViewerBarManager1.DockWindowTabFont = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.documentViewerBarManager1.DocumentViewer = this.documentViewer1;
             this.documentViewerBarManager1.Form = this;
             this.documentViewerBarManager1.ImageStream = ((DevExpress.Utils.ImageCollectionStreamer)(resources.GetObject("documentViewerBarManager1.ImageStream")));
@@ -298,7 +309,7 @@ namespace VitalLabels
             this.bbiSample,
             this.bbiA4Pallet,
             this.bbiACBOuter,
-            this.bbiBiotech,
+            this.bbiBiotechJob,
             this.bbiUserBarcode,
             this.bbiBiotechOuter,
             this.bsiACB,
@@ -320,9 +331,10 @@ namespace VitalLabels
             this.bbiRoom,
             this.bbiEquipment,
             this.barSubItem6,
-            this.biInovaOuter});
+            this.biInovaOuter,
+            this.bbiBiotechSKU});
             this.documentViewerBarManager1.MainMenu = this.previewBar3;
-            this.documentViewerBarManager1.MaxItemId = 108;
+            this.documentViewerBarManager1.MaxItemId = 109;
             this.documentViewerBarManager1.PreviewBar = this.previewBar1;
             this.documentViewerBarManager1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemProgressBar2,
@@ -728,6 +740,14 @@ namespace VitalLabels
             // 
             // previewBar3
             // 
+            this.previewBar3.BarAppearance.Disabled.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.previewBar3.BarAppearance.Disabled.Options.UseFont = true;
+            this.previewBar3.BarAppearance.Hovered.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.previewBar3.BarAppearance.Hovered.Options.UseFont = true;
+            this.previewBar3.BarAppearance.Normal.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.previewBar3.BarAppearance.Normal.Options.UseFont = true;
+            this.previewBar3.BarAppearance.Pressed.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.previewBar3.BarAppearance.Pressed.Options.UseFont = true;
             this.previewBar3.BarName = "Main Menu";
             this.previewBar3.DockCol = 0;
             this.previewBar3.DockRow = 0;
@@ -816,8 +836,12 @@ namespace VitalLabels
             // 
             this.barSubItem2.Caption = "Select Label";
             this.barSubItem2.Id = 65;
-            this.barSubItem2.ItemAppearance.Normal.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.barSubItem2.ItemAppearance.Hovered.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.barSubItem2.ItemAppearance.Hovered.Options.UseFont = true;
+            this.barSubItem2.ItemAppearance.Normal.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.barSubItem2.ItemAppearance.Normal.Options.UseFont = true;
+            this.barSubItem2.ItemAppearance.Pressed.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.barSubItem2.ItemAppearance.Pressed.Options.UseFont = true;
             this.barSubItem2.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.bsiACB, "", true, true, true, 0, null, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
             new DevExpress.XtraBars.LinkPersistInfo(this.barSubItem6),
@@ -862,6 +886,22 @@ namespace VitalLabels
             this.bbiACBShrinkSKU.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("bbiACBShrinkSKU.ImageOptions.LargeImage")));
             this.bbiACBShrinkSKU.Name = "bbiACBShrinkSKU";
             this.bbiACBShrinkSKU.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiACBShrinkSKU_ItemClick);
+            // 
+            // barSubItem6
+            // 
+            this.barSubItem6.Caption = "INOVA";
+            this.barSubItem6.Id = 106;
+            this.barSubItem6.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.biInovaOuter)});
+            this.barSubItem6.Name = "barSubItem6";
+            // 
+            // biInovaOuter
+            // 
+            this.biInovaOuter.Caption = "Outer Carton Label";
+            this.biInovaOuter.Id = 107;
+            this.biInovaOuter.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("biInovaOuter.ImageOptions.Image")));
+            this.biInovaOuter.Name = "biInovaOuter";
+            this.biInovaOuter.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.biInovaOuter_ItemClick);
             // 
             // barSubItem3
             // 
@@ -920,26 +960,35 @@ namespace VitalLabels
             this.barSubItem5.Caption = "BIOTEC";
             this.barSubItem5.Id = 89;
             this.barSubItem5.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(this.bbiBiotech),
-            new DevExpress.XtraBars.LinkPersistInfo(this.bbiBiotechOuter, true)});
+            new DevExpress.XtraBars.LinkPersistInfo(this.bbiBiotechOuter, true),
+            new DevExpress.XtraBars.LinkPersistInfo(this.bbiBiotechJob, true),
+            new DevExpress.XtraBars.LinkPersistInfo(this.bbiBiotechSKU, true)});
             this.barSubItem5.Name = "barSubItem5";
-            // 
-            // bbiBiotech
-            // 
-            this.bbiBiotech.Caption = "Biotech Shrink Label";
-            this.bbiBiotech.Id = 82;
-            this.bbiBiotech.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("bbiBiotech.ImageOptions.Image")));
-            this.bbiBiotech.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("bbiBiotech.ImageOptions.LargeImage")));
-            this.bbiBiotech.Name = "bbiBiotech";
-            this.bbiBiotech.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiBiotech_ItemClick);
             // 
             // bbiBiotechOuter
             // 
-            this.bbiBiotechOuter.Caption = "Biotech Outer Label";
+            this.bbiBiotechOuter.Caption = "Outer Carton Label";
             this.bbiBiotechOuter.Id = 84;
             this.bbiBiotechOuter.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("bbiBiotechOuter.ImageOptions.Image")));
             this.bbiBiotechOuter.Name = "bbiBiotechOuter";
             this.bbiBiotechOuter.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiBiotechOuter_ItemClick);
+            // 
+            // bbiBiotechJob
+            // 
+            this.bbiBiotechJob.Caption = "Shrink Label by Job";
+            this.bbiBiotechJob.Id = 82;
+            this.bbiBiotechJob.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("bbiBiotechJob.ImageOptions.Image")));
+            this.bbiBiotechJob.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("bbiBiotechJob.ImageOptions.LargeImage")));
+            this.bbiBiotechJob.Name = "bbiBiotechJob";
+            this.bbiBiotechJob.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiBiotechShrinkJob_ItemClick);
+            // 
+            // bbiBiotechSKU
+            // 
+            this.bbiBiotechSKU.Caption = "Shrink Label by SKU";
+            this.bbiBiotechSKU.Id = 108;
+            this.bbiBiotechSKU.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("bbiBiotechSKU.ImageOptions.Image")));
+            this.bbiBiotechSKU.Name = "bbiBiotechSKU";
+            this.bbiBiotechSKU.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiBiotechShrinkSKU_ItemClick);
             // 
             // bbiBulk
             // 
@@ -1010,33 +1059,33 @@ namespace VitalLabels
             // 
             this.barDockControlTop.CausesValidation = false;
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
-            this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
+            this.barDockControlTop.Location = new System.Drawing.Point(0, 39);
             this.barDockControlTop.Manager = this.documentViewerBarManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(1260, 56);
+            this.barDockControlTop.Size = new System.Drawing.Size(1394, 61);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 888);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 760);
             this.barDockControlBottom.Manager = this.documentViewerBarManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(1260, 27);
+            this.barDockControlBottom.Size = new System.Drawing.Size(1394, 27);
             // 
             // barDockControlLeft
             // 
             this.barDockControlLeft.CausesValidation = false;
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControlLeft.Location = new System.Drawing.Point(0, 56);
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 100);
             this.barDockControlLeft.Manager = this.documentViewerBarManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 832);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 660);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(1260, 56);
+            this.barDockControlRight.Location = new System.Drawing.Point(1394, 100);
             this.barDockControlRight.Manager = this.documentViewerBarManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 832);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 660);
             // 
             // printPreviewBarCheckItem1
             // 
@@ -1303,6 +1352,18 @@ namespace VitalLabels
             // barButtonItem1
             // 
             this.barButtonItem1.Id = 96;
+            this.barButtonItem1.ItemAppearance.Hovered.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.barButtonItem1.ItemAppearance.Hovered.Options.UseFont = true;
+            this.barButtonItem1.ItemAppearance.Normal.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.barButtonItem1.ItemAppearance.Normal.Options.UseFont = true;
+            this.barButtonItem1.ItemAppearance.Pressed.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.barButtonItem1.ItemAppearance.Pressed.Options.UseFont = true;
+            this.barButtonItem1.ItemInMenuAppearance.Hovered.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.barButtonItem1.ItemInMenuAppearance.Hovered.Options.UseFont = true;
+            this.barButtonItem1.ItemInMenuAppearance.Normal.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.barButtonItem1.ItemInMenuAppearance.Normal.Options.UseFont = true;
+            this.barButtonItem1.ItemInMenuAppearance.Pressed.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.barButtonItem1.ItemInMenuAppearance.Pressed.Options.UseFont = true;
             this.barButtonItem1.Name = "barButtonItem1";
             // 
             // barSubItem4
@@ -1322,36 +1383,82 @@ namespace VitalLabels
             this.barSubItem7.Id = 94;
             this.barSubItem7.Name = "barSubItem7";
             // 
-            // barSubItem6
+            // toolbarFormControl1
             // 
-            this.barSubItem6.Caption = "INOVA";
-            this.barSubItem6.Id = 106;
-            this.barSubItem6.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(this.biInovaOuter)});
-            this.barSubItem6.Name = "barSubItem6";
+            this.toolbarFormControl1.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolbarFormControl1.Location = new System.Drawing.Point(0, 0);
+            this.toolbarFormControl1.Manager = this.toolbarFormManager1;
+            this.toolbarFormControl1.Name = "toolbarFormControl1";
+            this.toolbarFormControl1.Size = new System.Drawing.Size(1394, 39);
+            this.toolbarFormControl1.TabIndex = 5;
+            this.toolbarFormControl1.TabStop = false;
+            this.toolbarFormControl1.ToolbarForm = this;
             // 
-            // biInovaOuter
+            // toolbarFormManager1
             // 
-            this.biInovaOuter.Caption = "Outer Carton Label";
-            this.biInovaOuter.Id = 107;
-            this.biInovaOuter.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem3.ImageOptions.Image")));
-            this.biInovaOuter.Name = "biInovaOuter";
-            this.biInovaOuter.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.biInovaOuter_ItemClick);
+            this.toolbarFormManager1.DockControls.Add(this.barDockControl1);
+            this.toolbarFormManager1.DockControls.Add(this.barDockControl2);
+            this.toolbarFormManager1.DockControls.Add(this.barDockControl3);
+            this.toolbarFormManager1.DockControls.Add(this.barDockControl4);
+            this.toolbarFormManager1.DockWindowTabFont = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolbarFormManager1.Form = this;
+            // 
+            // barDockControl1
+            // 
+            this.barDockControl1.CausesValidation = false;
+            this.barDockControl1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.barDockControl1.Location = new System.Drawing.Point(0, 39);
+            this.barDockControl1.Manager = this.toolbarFormManager1;
+            this.barDockControl1.Size = new System.Drawing.Size(1394, 0);
+            // 
+            // barDockControl2
+            // 
+            this.barDockControl2.CausesValidation = false;
+            this.barDockControl2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.barDockControl2.Location = new System.Drawing.Point(0, 787);
+            this.barDockControl2.Manager = this.toolbarFormManager1;
+            this.barDockControl2.Size = new System.Drawing.Size(1394, 0);
+            // 
+            // barDockControl3
+            // 
+            this.barDockControl3.CausesValidation = false;
+            this.barDockControl3.Dock = System.Windows.Forms.DockStyle.Left;
+            this.barDockControl3.Location = new System.Drawing.Point(0, 39);
+            this.barDockControl3.Manager = this.toolbarFormManager1;
+            this.barDockControl3.Size = new System.Drawing.Size(0, 748);
+            // 
+            // barDockControl4
+            // 
+            this.barDockControl4.CausesValidation = false;
+            this.barDockControl4.Dock = System.Windows.Forms.DockStyle.Right;
+            this.barDockControl4.Location = new System.Drawing.Point(1394, 39);
+            this.barDockControl4.Manager = this.toolbarFormManager1;
+            this.barDockControl4.Size = new System.Drawing.Size(0, 748);
             // 
             // frmMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1260, 915);
+            this.Appearance.Options.UseFont = true;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.ClientSize = new System.Drawing.Size(1394, 787);
             this.Controls.Add(this.layoutControl1);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Controls.Add(this.barDockControl3);
+            this.Controls.Add(this.barDockControl4);
+            this.Controls.Add(this.barDockControl2);
+            this.Controls.Add(this.barDockControl1);
+            this.Controls.Add(this.toolbarFormControl1);
+            this.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.IconOptions.Icon = ((System.Drawing.Icon)(resources.GetObject("frmMain.IconOptions.Icon")));
             this.Name = "frmMain";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Nautilus Labels - ACB Outer Carton Label";
+            this.ToolbarFormControl = this.toolbarFormControl1;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.frmMain_Load);
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemProgressBar1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemZoomTrackBar1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
@@ -1362,6 +1469,8 @@ namespace VitalLabels
             ((System.ComponentModel.ISupportInitialize)(this.printPreviewRepositoryItemComboBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemProgressBar2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemZoomTrackBar2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.toolbarFormControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.toolbarFormManager1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1461,7 +1570,7 @@ namespace VitalLabels
         private DevExpress.XtraBars.BarButtonItem bbiA4Pallet;
         private DevExpress.XtraBars.BarButtonItem bbiACBOuter;
         //private DevExpress.XtraBars.BarButtonItem bbiShrink;
-        private DevExpress.XtraBars.BarButtonItem bbiBiotech;
+        private DevExpress.XtraBars.BarButtonItem bbiBiotechJob;
         private DevExpress.XtraBars.BarButtonItem bbiUserBarcode;
         private DevExpress.XtraBars.BarButtonItem bbiBiotechOuter;
         private DevExpress.XtraBars.BarSubItem bsiACB;
@@ -1484,5 +1593,12 @@ namespace VitalLabels
         private DevExpress.XtraBars.BarButtonItem bbiEquipment;
         private DevExpress.XtraBars.BarSubItem barSubItem6;
         private DevExpress.XtraBars.BarButtonItem biInovaOuter;
+        private DevExpress.XtraBars.ToolbarForm.ToolbarFormControl toolbarFormControl1;
+        private DevExpress.XtraBars.ToolbarForm.ToolbarFormManager toolbarFormManager1;
+        private DevExpress.XtraBars.BarDockControl barDockControl1;
+        private DevExpress.XtraBars.BarDockControl barDockControl2;
+        private DevExpress.XtraBars.BarDockControl barDockControl3;
+        private DevExpress.XtraBars.BarDockControl barDockControl4;
+        private DevExpress.XtraBars.BarButtonItem bbiBiotechSKU;
     }
 }

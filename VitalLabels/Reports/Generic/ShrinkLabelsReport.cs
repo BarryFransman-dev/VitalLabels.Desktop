@@ -14,11 +14,11 @@ namespace VitalLabels.Desktop.Reports
         {
             if (e.ParametersInformation[0].Parameter.Description == "Stock Code")
             {
-                this.DataSource = new SqlRepository().GetShrinkSKU(e.ParametersInformation[0].Parameter.Value.ToString()).ToList();
+                this.DataSource = new SqlRepository().GetShrinkGenSKU(e.ParametersInformation[0].Parameter.Value.ToString()).ToList();
             }
             else
             {
-                this.DataSource = new SqlRepository().GetShrinkJob(e.ParametersInformation[0].Parameter.Value.ToString()).ToList();
+                this.DataSource = new SqlRepository().GetShrinkGenJob(e.ParametersInformation[0].Parameter.Value.ToString()).ToList();
             }
         }
     }

@@ -20,6 +20,17 @@ namespace VitalLabels.Desktop.Repository
             return retSql;
         }
 
+
+        public IEnumerable<ACBOuterModel> GetGenSC(string passStockCode)
+        {
+            var retSql = new SysproContext().Database.SqlQuery<ACBOuterModel>("select i.StockCode,'' CustStockCode,i.Description, p.UnitsPerOuter, p.OuterCartonLabel,p.BarcodeOuter " +
+                                                                              "From InvMaster i " +
+                                                                              "Join [InvMaster+] p on p.StockCode = i.StockCode " +
+                                                                              //"Left Outer Join(Select * from ArCustStkXref where Customer = '71C03A') x on x.StockCode = i.StockCode " +
+                                                                              "where i.StockCode = '" + passStockCode + "'");
+            return retSql;
+        }
+
         public IEnumerable<OuterModel> GetOuterSC(string passStockCode)
         {
             var retSql = new SysproContext().Database.SqlQuery<OuterModel>("select i.StockCode,i.Description,p.BarcodeOuter " +
@@ -53,13 +64,54 @@ namespace VitalLabels.Desktop.Repository
             return retSql.ToList();
         }
 
-        public IEnumerable<BiotechModel> GetBiotechSC(string passStockCode)
+
+
+
+
+        public IEnumerable<ShrinkModel> GetShrinkGenJob(string passJob)
+        {
+            var retSql = new SysproContext().Database.SqlQuery<ShrinkModel>("select replace(ltrim(replace(w.Job,'0',' ')),' ','0') Job, i.Description, w.StockCode, '' CustStockCode, " +
+                                                                            "w.JobDescription, p.BarcodeShrinks, p.BarcodeCode PackingCode, convert(int,p.UnitsPerShrink) " +
+                                                                            "ShrinkSize from WipMaster w join[InvMaster+] p on w.StockCode = p.StockCode " +
+                                                                            "join InvMaster i on w.StockCode = i.StockCode " +
+                                                                            //"Left Outer Join(Select * from ArCustStkXref where Customer = '71C03A') x on x.StockCode = i.StockCode " +
+                                                                            "where replace(ltrim(replace(w.Job, '0', ' ')), ' ', '0') = '" + passJob + "'");
+            return retSql;
+        }
+
+        public IEnumerable<ShrinkModel> GetShrinkGenSKU(string passSKU)
+        {
+            var retSql = new SysproContext().Database.SqlQuery<ShrinkModel>("select i.StockCode,i.Description, '' CustStockCode, " +
+                                                                            "p.BarcodeShrinks, p.BarcodeCode PackingCode, convert(int,p.UnitsPerShrink) ShrinkSize " +
+                                                                            "from [InvMaster+] p join InvMaster i on p.StockCode = i.StockCode " +
+                                                                            //"Left Outer Join(Select * from ArCustStkXref where Customer = '71C03A') x on x.StockCode = i.StockCode " +
+                                                                            "where i.StockCode = '" + passSKU + "'");
+            //var x = retSql.ToList();
+            return retSql.ToList();
+        }
+
+
+
+
+        public IEnumerable<BiotechModel> GetBiotechSC(string passSKU)
         {
             var retSql = new SysproContext().Database.SqlQuery<BiotechModel>("select i.Description,i.StockCode,p.BarcodeShrinks, p.BarcodeCode PackingCode, " +
                                                                              "convert(int,p.UnitsPerShrink) ShrinkSize " +
-                                                                             "from[InvMaster+] p " +
+                                                                             "from [InvMaster+] p " +
                                                                              "join InvMaster i on i.StockCode = p.StockCode " +
-                                                                             "where i.StockCode = '" + passStockCode + "'");
+                                                                             "where i.StockCode = '" + passSKU + "'");
+            return retSql;
+        }
+
+        public IEnumerable<BiotechModel> GetBiotechJob(string passJob)
+        {
+            var retSql = new SysproContext().Database.SqlQuery<BiotechModel>("select replace(ltrim(replace(w.Job,'0',' ')),' ','0') Job, w.JobDescription, i.Description, " +
+                                                                             "i.StockCode,p.BarcodeShrinks, p.BarcodeCode PackingCode, " +
+                                                                             "convert(int,p.UnitsPerShrink) ShrinkSize " +
+                                                                             "from WipMaster w " +
+                                                                             "join [InvMaster+] p on w.StockCode = p.StockCode " +
+                                                                             "join InvMaster i on i.StockCode = p.StockCode " +
+                                                                             "where replace(ltrim(replace(w.Job, '0', ' ')), ' ', '0') = '" + passJob + "'");
             return retSql;
         }
 

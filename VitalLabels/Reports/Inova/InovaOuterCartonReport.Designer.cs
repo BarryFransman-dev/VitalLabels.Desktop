@@ -203,8 +203,7 @@ namespace VitalLabels.Desktop.Reports
             this.label4.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
             this.label4.SizeF = new System.Drawing.SizeF(686.8757F, 45.1908F);
             this.label4.StylePriority.UseFont = false;
-            this.label4.Text = "Phone: (021) 501 0740";
-            this.label4.Visible = false;
+            this.label4.Text = "Phone: (011) 470 1000";
             // 
             // label2
             // 
